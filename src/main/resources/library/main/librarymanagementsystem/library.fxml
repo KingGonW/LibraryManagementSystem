@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,23 +27,23 @@
             <Font name="Comic Sans MS" size="26.0" />
          </font>
       </Text>
-      <TextField fx:id="author" layoutX="96.0" layoutY="316.0" promptText="Author name" style="-fx-background-color: #455d7a;" />
-      <TextField fx:id="book" layoutX="96.0" layoutY="361.0" promptText="Book name" style="-fx-background-color: #455d7a;" />
-      <TextField fx:id="ca" layoutX="96.0" layoutY="409.0" promptText="Call Number" style="-fx-background-color: #455d7a;" />
-      <TextField fx:id="category" layoutX="96.0" layoutY="457.0" promptText="Category" style="-fx-background-color: #455d7a;" />
-      <Button layoutX="115.0" layoutY="504.0" mnemonicParsing="false" onAction="#addItem" prefHeight="36.0" prefWidth="112.0" style="-fx-background-color: yellow;" text="Add book">
+      <TextField fx:id="author" layoutX="96.0" layoutY="316.0" promptText="Author name" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <TextField fx:id="book" layoutX="96.0" layoutY="361.0" promptText="Book name" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <TextField fx:id="ca" layoutX="96.0" layoutY="409.0" promptText="Call Number" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <TextField fx:id="category" layoutX="96.0" layoutY="457.0" promptText="Category" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <Button layoutX="115.0" layoutY="504.0" mnemonicParsing="false" onAction="#addItem" prefHeight="36.0" prefWidth="112.0" style="-fx-background-color: #16d933;" text="Add book">
          <font>
             <Font name="Comic Sans MS" size="14.0" />
          </font>
       </Button>
-      <ListView fx:id="booksList" layoutX="353.0" layoutY="225.0" prefHeight="406.0" prefWidth="596.0" style="-fx-background-color: #455d7a;" stylesheets="@listview.css" />
+      <ListView fx:id="booksList" layoutX="353.0" layoutY="225.0" prefHeight="406.0" prefWidth="596.0" style="-fx-background-color: white;" stylesheets="@listview.css" />
       <Text fill="WHITE" layoutX="359.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author;Title;Ca;Category" wrappingWidth="265.0">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="search" layoutX="624.0" layoutY="164.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search..." style="-fx-background-color: #455d7a;" />
-      <Button fx:id="edit" layoutX="807.0" layoutY="164.0" mnemonicParsing="false" onAction="#editBook" style="-fx-background-color: green;" text="Edit">
+      <Button fx:id="edit" layoutX="807.0" layoutY="164.0" mnemonicParsing="false" onAction="#editBook" style="-fx-background-color: yellow;" text="Edit">
          <font>
             <Font size="15.0" />
          </font>
@@ -56,5 +58,13 @@
             <Font name="Bell MT" size="32.0" />
          </font>
       </Text>
+      <TableView fx:id="booksList" layoutX="353.0" layoutY="225.0" prefHeight="312.0" prefWidth="596.0">
+        <columns>
+          <TableColumn fx:id="author" prefWidth="131.0" text="Author Name" />
+          <TableColumn fx:id="book" prefWidth="134.0" text="Title" />
+            <TableColumn fx:id="ca" prefWidth="220.0" text="Call Number" />
+            <TableColumn fx:id="category" minWidth="1.0" prefWidth="110.0" text="Category" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

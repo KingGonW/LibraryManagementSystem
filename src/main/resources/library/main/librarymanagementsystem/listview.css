@@ -6,12 +6,14 @@
 .list-cell{
     -fx-font-size:18.0;
 }
-
-.list-cell:even {
-    -fx-background-color: white;
+/*.list-cell:odd{
+    -fx-background-color: black;
 }
+.list-cell:even {
+    -fx-background-color: black;
+}*/
 
 .list-cell:filled:hover {
-    -fx-background-color: #0093ff;
+    -fx-background-color: #328BDB;
     -fx-text-fill: white;
 }
