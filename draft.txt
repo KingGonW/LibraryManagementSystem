@@ -1,0 +1,10 @@
+<ListView fx:id="booksList" layoutX="353.0" layoutY="225.0" prefHeight="406.0" prefWidth="596.0" style="-fx-background-color: white;" stylesheets="@listview.css" />
+
+      <TableView fx:id="booksList" layoutX="353.0" layoutY="225.0" prefHeight="312.0" prefWidth="596.0">
+        <columns>
+          <TableColumn fx:id="author" prefWidth="131.0" text="Author Name" />
+          <TableColumn fx:id="book" prefWidth="134.0" text="Title" />
+            <TableColumn fx:id="ca" prefWidth="220.0" text="Call Number" />
+            <TableColumn fx:id="category" minWidth="1.0" prefWidth="110.0" text="Category" />
+        </columns>
+      </TableView>

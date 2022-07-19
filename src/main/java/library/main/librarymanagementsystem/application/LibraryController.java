@@ -23,26 +23,28 @@ public class LibraryController implements Initializable {
 
     @FXML
     private ListView<String> booksList;
-
     @FXML
     private TextField author;
-
     @FXML
     private TextField book;
-
     @FXML
     private TextField ca;
-
     @FXML
     private TextField category;
-
     @FXML
     private TextField search;
+
+    public TableColumn<Book, String> authorcolid,titlecolid,cacolid,categorycolid;
+    //public TableView<Book> tableView;
+
+    public static TableView<Book> table;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             loadBooks();
+            //initializeTableView();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -128,6 +130,9 @@ public class LibraryController implements Initializable {
         String book_text = book.getText();
         String ca_text = ca.getText();
         String category_text = category.getText();
+
+        Book books=new Book(author_text, book_text, ca_text, category_text);
+        booksList.getItems().add(String.valueOf(books));
 
         StringBuilder sb = new StringBuilder();
         sb.append(author_text);
