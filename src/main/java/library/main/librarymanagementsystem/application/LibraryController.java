@@ -80,7 +80,7 @@ public class LibraryController implements Initializable {
 
         if (selectedIndices.size() == 1) {
             String bookToEdit = BooksRecord.getItems().get(selectedIndices.get(0));
-            String oldCa = bookToEdit.split("  |  ")[2];
+            String oldCa = bookToEdit.split("  ;  ")[2];
 
 
             EditBook eb = new EditBook();
@@ -94,7 +94,7 @@ public class LibraryController implements Initializable {
 
 
 
-                Path p2 = Paths.get("src/main/data/" + str.split("  |  ")[2] + ".txt");
+                Path p2 = Paths.get("src/main/data/" + str.split("  ;  ")[2] + ".txt");
                 File newFile = new File(p2.toString());
 
                 if(newFile.createNewFile()) {
@@ -115,7 +115,7 @@ public class LibraryController implements Initializable {
 
         if (selectedIndices.size() == 1) {
             String bookToEdit = BooksRecord.getItems().get(selectedIndices.get(0));
-            String oldCa = bookToEdit.split("  |  ")[2];
+            String oldCa = bookToEdit.split("  ;  ")[2];
             Path p = Paths.get("src/main/data/" + oldCa + ".txt");
             File fileToDelete = new File(p.toString());
             fileToDelete.delete();
@@ -139,13 +139,13 @@ public class LibraryController implements Initializable {
 
         StringBuilder sb = new StringBuilder();
         sb.append(author_text);
-        sb.append("  |  ");
+        sb.append("  ;  ");
         sb.append(book_text);
-        sb.append("  |  ");
+        sb.append("  ;  ");
         sb.append(ca_text);
-        sb.append("  |  ");
+        sb.append("  ;  ");
         sb.append(category_text);
-        sb.append("  |  ");
+        sb.append("  ;  ");
         sb.append(date.getValue());
 
         String data = new String(sb);
@@ -161,6 +161,7 @@ public class LibraryController implements Initializable {
         book.setText("");
         ca.setText("");
         category.setText("");
+        //date.setValue();
 
         this.loadBooks();
     }
@@ -193,7 +194,7 @@ public class LibraryController implements Initializable {
 
         Stage stage = HelloApplication.getPrimaryStage();
         stage.hide();
-        stage.setTitle("Library Management System");
+        stage.setTitle("Library System");
         stage.setScene(scene);
         stage.show();
     }

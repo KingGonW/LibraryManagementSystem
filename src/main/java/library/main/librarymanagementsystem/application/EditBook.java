@@ -60,7 +60,7 @@ public class EditBook {
 
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == confirm) {
-                return author.getText() + ";" + title.getText() + ";" + ca.getText() + ";" + category.getText()+";"+ date.getValue();
+                return author.getText() + "  ;  " + title.getText() + "  ;  " + ca.getText() + "  ;  " + category.getText()+"  ;  "+ date.getValue();
             }
             return null;
         });

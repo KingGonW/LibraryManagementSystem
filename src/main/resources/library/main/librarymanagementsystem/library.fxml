@@ -13,8 +13,8 @@
 
 <AnchorPane prefHeight="679.0" prefWidth="1000.0" style="-fx-background-color: #f95959;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.main.librarymanagementsystem.application.LibraryController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#455d7a" height="146.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#455d7a" height="82.0" layoutX="40.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" width="249.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#455d7a" height="146.0" layoutY="-4.0" stroke="#455d7a" strokeType="INSIDE" width="1000.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#455d7a" height="82.0" layoutX="40.0" layoutY="184.0" stroke="#455d7a" strokeType="INSIDE" width="249.0" />
       <Text fill="WHITE" layoutX="81.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new book" textAlignment="CENTER" wrappingWidth="180.0">
          <font>
             <Font name="Comic Sans MS" size="26.0" />
@@ -37,12 +37,12 @@
             <TableColumn fx:id="categorycolid" minWidth="1.0" prefWidth="110.0" text="Category" />
          </columns>
       </TableView>
-      <Text fill="WHITE" layoutX="359.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author| Title| Call Number| Category| Date" wrappingWidth="354.0">
+      <Text fill="WHITE" layoutX="353.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author ; Title ; Call Number ; Category ; Date" wrappingWidth="405.0">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="search" layoutX="753.0" layoutY="165.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search book..." style="-fx-background-color: #455d7a;-fx-text-fill: white;" />
+      <TextField fx:id="search" layoutX="777.0" layoutY="169.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search book..." style="-fx-background-color: #455d7a;-fx-text-fill: white;" />
       <Button fx:id="edit" layoutX="40.0" layoutY="594.0" mnemonicParsing="false" onAction="#editBook" prefHeight="31.0" prefWidth="112.0" style="-fx-background-color: yellow;" text="Edit book">
          <font>
             <Font name="System Bold" size="15.0" />
