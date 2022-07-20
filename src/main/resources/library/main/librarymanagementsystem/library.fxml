@@ -37,7 +37,7 @@
             <TableColumn fx:id="categorycolid" minWidth="1.0" prefWidth="110.0" text="Category" />
          </columns>
       </TableView>
-      <Text fill="WHITE" layoutX="359.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author; Title; Call Number; Category" wrappingWidth="354.0">
+      <Text fill="WHITE" layoutX="359.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author| Title| Call Number| Category| Date" wrappingWidth="354.0">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>

@@ -47,7 +47,7 @@ public class EditBook {
         grid.add(new Label("Title:"), 0, 1);
         grid.add(title, 1, 1);
 
-        grid.add(new Label("Ca:"), 0, 2);
+        grid.add(new Label("Call Number:"), 0, 2);
         grid.add(ca, 1, 2);
 
         grid.add(new Label("Category:"), 0, 3);
