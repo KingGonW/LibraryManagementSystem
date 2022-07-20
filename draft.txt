@@ -8,3 +8,5 @@
             <TableColumn fx:id="category" minWidth="1.0" prefWidth="110.0" text="Category" />
         </columns>
       </TableView>
+
+stylesheets="@listview.css"

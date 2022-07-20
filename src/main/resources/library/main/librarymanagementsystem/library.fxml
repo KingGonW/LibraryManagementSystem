@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="679.0" prefWidth="1000.0" style="-fx-background-color: #f95959;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.main.librarymanagementsystem.application.LibraryController">
+<AnchorPane prefHeight="679.0" prefWidth="1000.0" style="-fx-background-color: #f95959;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.main.librarymanagementsystem.application.LibraryController">
    <children>
-      <TextArea nodeOrientation="LEFT_TO_RIGHT" prefHeight="140.0" prefWidth="1000.0" style="-fx-text-fill: black; -fx-control-inner-background: #455d7a; -fx-background-color: black;">
-         <font>
-            <Font name="Comic Sans MS" size="26.0" />
-         </font>
-      </TextArea>
-      <TextArea layoutX="40.0" layoutY="203.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="62.0" prefWidth="249.0" style="-fx-text-fill: black; -fx-control-inner-background: #455d7a; -fx-background-color: red;" AnchorPane.bottomAnchor="394.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="711.0" AnchorPane.topAnchor="203.0">
-         <font>
-            <Font name="Comic Sans MS" size="26.0" />
-         </font>
-      </TextArea>
-      <Text fill="WHITE" layoutX="81.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new book" textAlignment="CENTER" wrappingWidth="180.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#455d7a" height="146.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#455d7a" height="82.0" layoutX="40.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" width="249.0" />
+      <Text fill="WHITE" layoutX="81.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new book" textAlignment="CENTER" wrappingWidth="180.0">
          <font>
             <Font name="Comic Sans MS" size="26.0" />
          </font>
       </Text>
-      <TextField fx:id="author" layoutX="96.0" layoutY="316.0" promptText="Author name" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
-      <TextField fx:id="book" layoutX="96.0" layoutY="361.0" promptText="Book name" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
-      <TextField fx:id="ca" layoutX="96.0" layoutY="409.0" promptText="Call Number" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
-      <TextField fx:id="category" layoutX="96.0" layoutY="457.0" promptText="Category" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
-      <Button layoutX="115.0" layoutY="504.0" mnemonicParsing="false" onAction="#addItem" prefHeight="36.0" prefWidth="112.0" style="-fx-background-color: #2eac68;" text="Add book">
+      <TextField fx:id="author" layoutX="96.0" layoutY="296.0" promptText="Author name" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <TextField fx:id="book" layoutX="96.0" layoutY="340.0" promptText="Book name" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <TextField fx:id="ca" layoutX="97.0" layoutY="381.0" promptText="Call Number" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <TextField fx:id="category" layoutX="96.0" layoutY="428.0" promptText="Category" style="-fx-background-color: #455d7a; -fx-text-fill: white;" />
+      <Button layoutX="115.0" layoutY="529.0" mnemonicParsing="false" onAction="#addItem" prefHeight="36.0" prefWidth="112.0" style="-fx-background-color: #7A6245;" text="Add book" textFill="WHITE">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font>
@@ -38,28 +37,29 @@
             <TableColumn fx:id="categorycolid" minWidth="1.0" prefWidth="110.0" text="Category" />
          </columns>
       </TableView>
-      <Text layoutX="359.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author;Title;Ca;Category" wrappingWidth="265.0">
+      <Text fill="WHITE" layoutX="359.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author; Title; Call Number; Category" wrappingWidth="354.0">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="search" layoutX="624.0" layoutY="164.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search..." style="-fx-background-color: #455d7a;" />
-      <Button fx:id="edit" layoutX="807.0" layoutY="164.0" mnemonicParsing="false" onAction="#editBook" style="-fx-background-color: yellow;" text="Edit">
+      <TextField fx:id="search" layoutX="753.0" layoutY="165.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search book..." style="-fx-background-color: #455d7a;" />
+      <Button fx:id="edit" layoutX="40.0" layoutY="594.0" mnemonicParsing="false" onAction="#editBook" prefHeight="31.0" prefWidth="112.0" style="-fx-background-color: yellow;" text="Edit book">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="delete" layoutX="872.0" layoutY="164.0" mnemonicParsing="false" onAction="#deleteBook" style="-fx-background-color: red;" text="Delete">
+      <Button fx:id="delete" layoutX="189.0" layoutY="594.0" mnemonicParsing="false" onAction="#deleteBook" prefHeight="31.0" prefWidth="112.0" style="-fx-background-color: #59F9F9;" text="Delete book">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Text fill="WHITE" layoutX="33.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO THE LIBRARY IN THE MIDDLE OF NOWHERE">
+      <Text fill="WHITE" layoutX="21.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO THE LIBRARY IN THE MIDDLE OF NOWHERE">
          <font>
-            <Font name="Bell MT" size="32.0" />
+            <Font name="Bell MT Bold" size="32.0" />
          </font>
       </Text>
-      <ListView fx:id="booksList" layoutX="353.0" layoutY="225.0" prefHeight="406.0" prefWidth="596.0" style="-fx-background-color: white;" stylesheets="@listview.css" />
+      <ListView fx:id="BooksRecord" layoutX="353.0" layoutY="225.0" prefHeight="406.0" prefWidth="596.0" style="-fx-background-color: white;" stylesheets="@listview.css" />
+      <DatePicker fx:id="date" layoutX="96.0" layoutY="475.0" prefHeight="25.0" prefWidth="149.0" />
 
    </children>
 </AnchorPane>

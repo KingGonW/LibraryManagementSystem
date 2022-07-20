@@ -1,10 +1,7 @@
 package library.main.librarymanagementsystem.application;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.util.Optional;
@@ -42,6 +39,8 @@ public class EditBook {
         TextField category = new TextField();
         category.setPromptText("Category");
 
+        DatePicker date = new DatePicker();
+
         grid.add(new Label("Author:"), 0, 0);
         grid.add(author, 1, 0);
 
@@ -54,11 +53,14 @@ public class EditBook {
         grid.add(new Label("Category:"), 0, 3);
         grid.add(category, 1, 3);
 
+        grid.add(new Label("Date:"),0,4);
+        grid.add(date,1, 4);
+
         dialog.getDialogPane().setContent(grid);
 
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == confirm) {
-                return author.getText() + ";" + title.getText() + ";" + ca.getText() + ";" + category.getText();
+                return author.getText() + ";" + title.getText() + ";" + ca.getText() + ";" + category.getText()+";"+ date.getValue();
             }
             return null;
         });

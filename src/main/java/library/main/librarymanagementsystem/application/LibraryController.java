@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class LibraryController implements Initializable {
 
     @FXML
-    private ListView<String> booksList;
+    private ListView<String> BooksRecord;
     @FXML
     private TextField author;
     @FXML
@@ -33,6 +33,8 @@ public class LibraryController implements Initializable {
     private TextField category;
     @FXML
     private TextField search;
+    @FXML
+    DatePicker date;
 
     public TableColumn<Book, String> authorcolid,titlecolid,cacolid,categorycolid;
     //public TableView<Book> tableView;
@@ -49,7 +51,7 @@ public class LibraryController implements Initializable {
             e.printStackTrace();
         }
 
-        booksList.setFixedCellSize(50.0);
+        BooksRecord.setFixedCellSize(50.0);
     }
 
     @FXML
@@ -60,24 +62,24 @@ public class LibraryController implements Initializable {
         if (search_text.length() >= 3) {
             ArrayList<String> results = new ArrayList<>();
 
-            for(String book: booksList.getItems()) {
+            for(String book: BooksRecord.getItems()) {
                 if (book.toLowerCase().contains(search_text)) results.add(book);
             }
 
-            booksList.getItems().clear();
+            BooksRecord.getItems().clear();
             if (results.size() > 0) {
-                for(String found_book: results) booksList.getItems().add(found_book);
-                booksList.refresh();
+                for(String found_book: results) BooksRecord.getItems().add(found_book);
+                BooksRecord.refresh();
             }
         }
     }
 
     @FXML
     protected void editBook() throws IOException {
-        ObservableList<Integer> selectedIndices = booksList.getSelectionModel().getSelectedIndices();
+        ObservableList<Integer> selectedIndices = BooksRecord.getSelectionModel().getSelectedIndices();
 
         if (selectedIndices.size() == 1) {
-            String bookToEdit = booksList.getItems().get(selectedIndices.get(0));
+            String bookToEdit = BooksRecord.getItems().get(selectedIndices.get(0));
             String oldCa = bookToEdit.split(";")[2];
 
 
@@ -109,10 +111,10 @@ public class LibraryController implements Initializable {
 
     @FXML
     protected void deleteBook() throws IOException {
-        ObservableList<Integer> selectedIndices = booksList.getSelectionModel().getSelectedIndices();
+        ObservableList<Integer> selectedIndices = BooksRecord.getSelectionModel().getSelectedIndices();
 
         if (selectedIndices.size() == 1) {
-            String bookToEdit = booksList.getItems().get(selectedIndices.get(0));
+            String bookToEdit = BooksRecord.getItems().get(selectedIndices.get(0));
             String oldCa = bookToEdit.split(";")[2];
             Path p = Paths.get("src/main/data/" + oldCa + ".txt");
             File fileToDelete = new File(p.toString());
@@ -130,9 +132,10 @@ public class LibraryController implements Initializable {
         String book_text = book.getText();
         String ca_text = ca.getText();
         String category_text = category.getText();
+        //String date_text = date.getId();
 
         Book books=new Book(author_text, book_text, ca_text, category_text);
-        booksList.getItems().add(String.valueOf(books));
+        BooksRecord.getItems().add(String.valueOf(books));
 
         StringBuilder sb = new StringBuilder();
         sb.append(author_text);
@@ -142,6 +145,8 @@ public class LibraryController implements Initializable {
         sb.append(ca_text);
         sb.append(";");
         sb.append(category_text);
+        sb.append(";");
+        sb.append(date.getValue());
 
         String data = new String(sb);
         Path p = Paths.get("src/main/data/" + ca_text + ".txt");
@@ -173,11 +178,11 @@ public class LibraryController implements Initializable {
         Path p = Paths.get("src/main/data");
         final File folder = new File(String.valueOf(p));
         ArrayList<String> al = listFilesForFolder(folder);
-        booksList.getItems().clear();
+        BooksRecord.getItems().clear();
         for(String book: al) {
-            booksList.getItems().add(book);
+            BooksRecord.getItems().add(book);
         }
-        booksList.refresh();
+        BooksRecord.refresh();
     }
 
 
