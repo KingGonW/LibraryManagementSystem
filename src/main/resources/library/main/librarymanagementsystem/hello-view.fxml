@@ -23,7 +23,7 @@
       </font>
     </Label>
 
-   <Button layoutX="268.0" layoutY="419.0" mnemonicParsing="false" onAction="#onStartButtonClick" style="-fx-background-color: yellow;" text="Login">
+   <Button layoutX="268.0" layoutY="419.0" mnemonicParsing="false" onAction="#loginButton" style="-fx-background-color: yellow;" text="Login">
       <font>
          <Font size="15.0" />
       </font>
@@ -37,7 +37,7 @@
       <font>
          <Font name="System Bold" size="15.0" />
       </font></Label>
-   <Button layoutX="407.0" layoutY="419.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #59F9F9;" text="Cancel">
+   <Button layoutX="407.0" layoutY="419.0" mnemonicParsing="false" onAction="#Exit" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #59F9F9;" text="Exit">
       <font>
          <Font size="15.0" />
       </font>

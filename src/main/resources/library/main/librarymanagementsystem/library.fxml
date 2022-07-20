@@ -42,7 +42,7 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="search" layoutX="753.0" layoutY="165.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search book..." style="-fx-background-color: #455d7a;" />
+      <TextField fx:id="search" layoutX="753.0" layoutY="165.0" onKeyTyped="#searchBook" prefHeight="31.0" prefWidth="162.0" promptText="Search book..." style="-fx-background-color: #455d7a;-fx-text-fill: white;" />
       <Button fx:id="edit" layoutX="40.0" layoutY="594.0" mnemonicParsing="false" onAction="#editBook" prefHeight="31.0" prefWidth="112.0" style="-fx-background-color: yellow;" text="Edit book">
          <font>
             <Font name="System Bold" size="15.0" />

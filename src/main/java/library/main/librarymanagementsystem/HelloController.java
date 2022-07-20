@@ -27,7 +27,7 @@ public class HelloController implements Initializable {
 
 
     @FXML
-    protected void onStartButtonClick() throws IOException {
+    protected void loginButton() throws IOException {
         String name = tUsername.getText();
         String passw = tPassword.getText();
         if (name.isEmpty()||passw.isEmpty()) {
@@ -35,6 +35,8 @@ public class HelloController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Please Enter Correct Username/Password");
             alert.showAndWait();
+            tUsername.setText("");
+            tPassword.setText("");
         }
         else{
             if(name.equals(user)&&passw.equals(pass)){
@@ -49,13 +51,14 @@ public class HelloController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Please Enter Correct Username/Password");
                 alert.showAndWait();
+                tUsername.setText("");
+                tPassword.setText("");
             }
         }
     }
     @FXML
-    protected void Cancel(ActionEvent e) {
-        tUsername.setText("");
-        tPassword.setText("");
+    protected void Exit(ActionEvent e) {
+        System.exit(0);
     }
 
     @Override
